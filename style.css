@@ -1,0 +1,580 @@
+/* --- 1. GLOBAL STYLES & VARIABLES --- */
+:root {
+    --color-dark: #222831;
+    --color-light-grey: #DBE2EF;
+    --color-accent: #3F72AF;
+    --color-white: #F9F7F7;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Lato', sans-serif;
+    --transition-speed: 300ms;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-dark);
+    background-color: var(--color-white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+.section__title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+.section__title--light {
+    color: var(--color-white);
+}
+
+/* --- 2. REUSABLE COMPONENTS (Buttons) --- */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
+}
+
+.btn--primary {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+.btn--primary:hover {
+    background-color: #335c8e; /* A slightly darker shade of accent */
+}
+
+.btn--outline {
+    border-color: var(--color-light-grey);
+    color: var(--color-dark);
+}
+
+.btn--outline:hover {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    border-color: var(--color-dark);
+}
+
+/* --- 3. HEADER & NAVIGATION --- */
+.main-header {
+    background: rgba(249, 247, 247, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow var(--transition-speed) ease;
+}
+
+.main-header.scrolled {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+.nav-logo img {
+    max-height: 70px; /* You can adjust this value to make the logo bigger or smaller */
+    width: auto;      /* Keeps the logo's proportions correct */
+    margin: 1px;
+}
+
+.hero {
+    position: relative; /* This is crucial for positioning the slides */
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    padding: 2rem;
+    overflow: hidden; /* Hides parts of slides that might stick out */
+}
+
+/* The container for all slides */
+.hero-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Sits below the content */
+}
+
+/* A dark overlay to ensure text is always readable */
+.hero-slideshow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2; 
+}
+
+/* Individual slide styling */
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 1.5s ease-in-out; /* Smooth fade transition */
+    z-index: 1;
+}
+
+/* The active slide is visible */
+.hero-slide.active {
+    opacity: 1;
+}
+
+/* Ensure hero content sits on top of the slideshow */
+.hero__content {
+    max-width: 700px;
+    position: relative; /* Make sure it's positionable */
+    z-index: 3; /* Places it above the slideshow and the overlay */
+}
+
+.hero__title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem; /* Base (mobile) size: Smaller for small screens */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2; /* Improved readability on mobile */
+    max-width: 90%; /* Prevents overflow on very small screens */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero__subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* --- 5. CATEGORIES SECTION --- */
+.category-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.category-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed) ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.05);
+}
+
+.category-card__title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* --- 8. FOOTER --- */
+.main-footer {
+    background-color: #f1f1f1;
+    padding: 4rem 0 0;
+    font-size: 0.9rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Mobile first (1 column) */
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col__title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-col li a i {
+    margin-right: 8px; /* Adds space between the icon and the text */
+    width: 20px;       /* Helps align the text vertically if icons have different widths */
+    text-align: center;
+    color: var(--color-accent); /* Makes the icons stand out a bit */
+}
+
+.footer-col a:hover {
+    color: var(--color-accent);
+}
+
+.footer-col__socials {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid #ddd;
+}
+
+/* --- 10. WHATSAPP POPUP STYLES --- */
+.whatsapp-popup {
+    /* Positioning */
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 2000; /* Ensure it's on top of other content */
+    
+    /* Appearance */
+    background-color: var(--color-white);
+    max-width: 340px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    padding: 1.5rem;
+    
+    /* Initial State (Hidden) */
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s;
+}
+
+/* Visible State (Toggled by JS) */
+.whatsapp-popup.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition-delay: 0s; /* Remove transition delay when showing */
+}
+
+/* Close Button Styling */
+.popup-close-btn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color var(--transition-speed) ease;
+}
+
+.popup-close-btn:hover {
+    color: var(--color-dark);
+}
+
+/* Content Styling */
+.popup-content {
+    text-align: center;
+}
+
+.popup-content h4 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.popup-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+/* Button Styling (reusing .btn) */
+.popup-content .btn {
+    width: 100%;
+    text-align: center;
+}
+
+.popup-content .btn i {
+    margin-right: 8px;
+}
+
+/* Mobile Responsiveness for the popup */
+@media (max-width: 400px) {
+    .whatsapp-popup {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        max-width: none;
+    }
+}
+
+/* --- 9. RESPONSIVE DESIGN (Mobile First) --- */
+/* Small tablets */
+@media (min-width: 600px) {
+    /* Make the 4-column grid a 2x2 grid on small tablets */
+    .category-grid--4-cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets and small desktops */
+@media (min-width: 768px) {
+    .section {
+        padding: 6rem 0;
+    }
+    .section__title {
+        font-size: 3rem;
+    }
+    
+    /* KEEP THIS STYLE FOR THE ORIGINAL 3-COLUMN LAYOUT IF YOU EVER USE IT */
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    } 
+
+    /* Increase hero title size for tablets+ */
+    .hero__title {
+        font-size: 3.5rem; /* Larger size for bigger screens */
+        line-height: 1.1;
+        max-width: 80%;
+    }
+}
+
+/* Large desktops */
+@media (min-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr); /* Changed from 3 columns to 4 equal columns */
+    }
+
+    /* Even larger hero title for desktops */
+    .hero__title {
+        font-size: 4rem; /* Optional: Max size for wide screens */
+        max-width: 700px;
+    }
+}
+
+/* --- 4.5. DESCRIPTION / MISSION SECTION --- */
+.intro-section {
+    text-align: center;
+}
+
+.section__title--intro {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.intro-section__text {
+    max-width: 700px; /* Limits the width for better readability */
+    margin: 0 auto;   /* Centers the text block */
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* --- 11. MOBILE NAVIGATION STYLES --- */
+
+/* --- 11. REFINED SIDEBAR MENU STYLES --- */
+
+/* Hamburger menu button */
+.nav-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--color-dark);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1500;
+}
+
+/* Dark overlay for the background */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(34, 40, 49, 0.5); /* Using a darker color from your palette */
+    backdrop-filter: blur(4px); /* Adds a subtle blur effect to the background */
+    z-index: 1300;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0s 0.4s;
+}
+
+.menu-overlay.show-overlay {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+
+/* === MOBILE SIDEBAR STYLES (Screen sizes BELOW 768px) === */
+@media (max-width: 767px) {
+    /* Show the hamburger button */
+    .nav-toggle {
+        display: block;
+    }
+
+    /* Style the sidebar menu container */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 85%;
+        max-width: 320px;
+        height: 100vh;
+        background-color: var(--color-white);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        box-shadow: 4px 0px 20px rgba(0, 0, 0, 0.1);
+        z-index: 1400;
+        transform: translateX(-100%);
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition */
+    }
+
+    .nav-menu.show-menu {
+        transform: translateX(0);
+    }
+    
+    /* Header inside the menu for the logo and close button */
+    .nav-menu-header {
+      display: flex;
+      justify-content: space-between; /* This is key for alignment */
+      align-items: center;            /* This is key for alignment */
+      padding: 1rem 1.25rem 1rem 1.5rem; /* Fine-tuned padding */
+      border-bottom: 1px solid #eaeaea;
+      margin-bottom: 1rem;
+    }
+    .nav-menu-header .nav-logo img {
+      max-height: 45px; /* Slightly smaller for better balance */
+    }
+
+    /* The new close button inside the menu */
+    .menu-close-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--color-dark);
+      padding: 0.5rem;
+      line-height: 1;
+      transition: color 0.3s ease;
+    }
+    .menu-close-btn:hover {
+      color: var(--color-accent);
+    }
+
+    /* Style menu links for mobile view */
+    .nav-menu a {
+        display: block;
+        padding: 0.8rem 2rem; /* Adjusted padding */
+        font-family: var(--font-heading);
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--color-dark);
+        letter-spacing: 0.5px;
+        position: relative;
+        border-left: 4px solid transparent;
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu li:not(.nav-menu-header) a:hover {
+        background-color: #f8f9fa;
+        color: var(--color-accent);
+        border-left-color: var(--color-accent);
+        padding-left: 2.25rem; /* Subtle indent on hover */
+    }
+    
+/* Staggered animation for menu items (UPDATED FOR HOME LINK) */
+.nav-menu li { opacity: 0; transform: translateX(-15px); transition: opacity 0.3s ease, transform 0.3s ease; }
+.nav-menu.show-menu li { opacity: 1; transform: translateX(0); }
+.nav-menu.show-menu li:nth-child(2) { transition-delay: 0.1s; }  /* Home */
+.nav-menu.show-menu li:nth-child(3) { transition-delay: 0.15s; } /* Bedding */
+.nav-menu.show-menu li:nth-child(4) { transition-delay: 0.2s; }  /* Women */
+.nav-menu.show-menu li:nth-child(5) { transition-delay: 0.25s; } /* Men */
+}
+
+/* Replace it with this CSS */
+
+@media (min-width: 768px) {
+    .nav-menu { 
+        display: flex; 
+        gap: 2.5rem; /* <-- Increased from 2rem for more space */
+    }
+    .nav-menu-header { display: none; }
+    .nav-menu a { 
+        font-size: 1.1rem; /* <-- ADDED to make the text bigger (adjust as needed) */
+        font-weight: 700; 
+        position: relative; 
+        padding: 0.5rem 0; 
+    }
+    .nav-menu a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--color-accent); transition: width var(--transition-speed) ease; }
+    .nav-menu a:hover::after { width: 100%; }
+}
