@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!-- The title is updated for this specific page -->
+      <title>Bridal Set | Shafique Living</title>
+
+      <!-- Google Fonts: Montserrat for headings, Lato for body text (Same as homepage) -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+      <!-- Font Awesome for Icons (Same as homepage) -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+      <!-- Your Custom CSS (Links to the SAME stylesheet) -->
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+      <!-- HEADER & NAVIGATION -->
+      <header class="main-header" id="main-header">
+        <div class="container">
+          <nav class="main-nav">
+            <a href="index.html" class="nav-logo">
+              <img src="https://i.postimg.cc/sxKJg2RK/logo.png" alt="Flux Kontext Pro Logo">
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Menu">
+              <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+              <li class="nav-menu-header">
+                <a href="index.html" class="nav-logo">
+                  <img src="https://i.postimg.cc/sxKJg2RK/logo.png" alt="Flux Kontext Pro Logo">
+                </a>
+                <button class="menu-close-btn" id="menu-close-btn" aria-label="Close menu">
+                  <i class="fas fa-times"></i>
+                </button>
+              </li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="bedding.html">Bedding</a></li>
+              <li><a href="womens-apparel.html">Women</a></li>
+              <li><a href="mens-apparel.html">Men</a></li>
+
+              <!-- ▲▲▲ End of changes ▲▲▲ -->
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main>
+
+        <!-- ================================== -->
+
+        <!-- === NEW PRODUCT GRID SECTION === -->
+
+        <!-- ================================== -->
+        <section class="section container product-page">
+          <header class="product-page__header">
+            <h1 class="section__title">Bridal Sets</h1>
+
+            <!-- <p class="section__subtitle">Discover timeless elegance with our exclusive collection of Corss Stitch premium bedding.</p> -->
+          </header>
+
+          <!-- Product Grid Container -->
+          <div class="product-grid" id="product-grid-container" data-category="bridal"></div>
+
+          <!-- ▼▼▼ ADD THIS NEW DIV ▼▼▼ -->
+<div id="pagination-container" class="pagination">
+  <!-- Page numbers will be loaded here by JavaScript -->
+</div>
+        </section>
+      </main>
+
+      <!-- ====================================================== -->
+
+      <!-- REUSED FOOTER (Copied from your homepage) -->
+
+      <!-- ====================================================== -->
+
+      <!-- ====================================================== -->
+
+      <!-- REUSED FOOTER (Copied from your homepage) -->
+
+      <!-- ====================================================== -->
+           <!-- ▼▼▼ ADD THIS LINE RIGHT HERE ▼▼▼ -->
+    <div id="footer-placeholder"></div>
+
+
+      <!-- MODAL HTML -->
+      <div id="product-modal" class="modal-overlay">
+        <div class="modal-content">
+          <button class="modal-close" aria-label="Close modal">&times;</button>
+          <div class="modal-grid">
+            <div class="modal-image-container">
+              <img src="" alt="Product Image" id="modal-img">
+            </div>
+            <div class="modal-info-container">
+              <h2 class="modal-name" id="modal-name">Product Name</h2>
+              <p class="modal-price" id="modal-price">Price</p>
+              <p class="modal-description" id="modal-description">
+                Product description will appear here.
+              </p>
+              <a href="#" id="whatsapp-order-btn" class="btn btn--primary" target="_blank">
+                <i class="fab fa-whatsapp"></i> Order via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Load ALL data files first -->
+               <script src="footer.js"></script>
+
+      <script src="bedding-products.js"></script>
+      <script src="men-products.js"></script>
+      <script src="women-products.js"></script>
+
+      <!-- Then load the universal script -->
+      <script src="script.js"></script>
+ <!-- Or script.js -->
+      <script src="product-order-details.js"></script>
+    </body>
+  </html>

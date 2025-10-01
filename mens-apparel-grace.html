@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grace Collection | Shafique Living</title>
+
+    <!-- Google Fonts: Montserrat for headings, Lato for body text (Same as homepage) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons (Same as homepage) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- Your Custom CSS (Links to the SAME stylesheet) -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <!-- HEADER & NAVIGATION -->
+    <header class="main-header" id="main-header">
+      <div class="container">
+        <nav class="main-nav">
+          <a href="#" class="nav-logo">
+            <img src="https://i.postimg.cc/sxKJg2RK/logo.png" alt="Flux Kontext Pro Logo">
+          </a>
+          <button class="nav-toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-menu-header">
+              <a href="index.html" class="nav-logo">
+                <img src="https://i.postimg.cc/sxKJg2RK/logo.png" alt="Flux Kontext Pro Logo">
+              </a>
+              <button class="menu-close-btn" id="menu-close-btn" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+              </button>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bedding.html">Bedding</a></li>
+            <li><a href="womens-apparel.html">Women</a></li>
+            <li><a href="mens-apparel.html">Men</a></li>
+
+            <!-- ▲▲▲ End of changes ▲▲▲ -->
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+
+      <!-- ================================== -->
+
+      <!-- === PRODUCT GRID SECTION === -->
+
+      <!-- ================================== -->
+      <section class="section container product-page">
+        <header class="product-page__header">
+          <h1 class="section__title">Grace Collection</h1>
+          <p class="section__subtitle">Discover timeless elegance with our exclusive collection of Grace premium bedding.</p>
+        </header>
+
+        <!-- Product Grid Container -->
+
+        <!-- This is the container where your script will place the Grace products -->
+        <div id="product-grid-container" class="product-grid" data-category="grace"></div>
+
+        <!-- ▼▼▼ ADD THIS NEW DIV ▼▼▼ -->
+<div id="pagination-container" class="pagination">
+  <!-- Page numbers will be loaded here by JavaScript -->
+</div>
+      </section>
+    </main>
+
+    <!-- ====================================================== -->
+
+    <!-- REUSED FOOTER (Copied from your homepage) -->
+
+    <!-- ====================================================== -->
+    <!-- ▼▼▼ ADD THIS LINE RIGHT HERE ▼▼▼ -->
+    <div id="footer-placeholder"></div>
+
+
+    <!-- ▼▼▼ PASTE THIS CORRECTED MODAL HTML INSTEAD ▼▼▼ -->
+    <div id="product-modal" class="modal-overlay">
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-grid">
+          <div class="modal-image-container">
+            <img id="modal-img" src="" alt="Product Image">
+          </div>
+          <div class="modal-info">
+            <h2 id="modal-name" class="modal-name">Product Name</h2>
+            <p id="modal-price" class="modal-price">Rs. 0</p>
+            <p id="modal-description" class="modal-description">
+              Product description will appear here.
+            </p>
+            <a id="whatsapp-order-btn" href="#" target="_blank">
+              <i class="fab fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load ALL data files first -->
+             <script src="footer.js"></script>
+
+    <script src="bedding-products.js"></script>
+    <script src="men-products.js"></script>
+    <script src="women-products.js"></script>
+
+    <!-- Then load the universal script -->
+    <script src="script.js"></script>
+ <!-- Or script.js -->
+    <script src="product-order-details.js"></script>
+  </body>
+</html>

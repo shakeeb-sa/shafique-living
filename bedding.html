@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The title for this specific page -->
+    <title>Bedding | Shafique Living</title>
+
+    <!-- Google Fonts, Font Awesome, and CSS (Same as homepage) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <!-- HEADER & NAVIGATION -->
+    <header class="main-header" id="main-header">
+      <div class="container">
+        <nav class="main-nav">
+          <a href="index.html" class="nav-logo">
+            <img src="https://i.postimg.cc/sxKJg2RK/logo.png" alt="Flux Kontext Pro Logo">
+          </a>
+          <button class="nav-toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-menu-header">
+              <a href="index.html" class="nav-logo">
+                <img src="https://i.postimg.cc/sxKJg2RK/logo.png" alt="Flux Kontext Pro Logo">
+              </a>
+              <button class="menu-close-btn" id="menu-close-btn" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+              </button>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bedding.html">Bedding</a></li>
+            <li><a href="womens-apparel.html">Women</a></li>
+            <li><a href="mens-apparel.html">Men</a></li>
+
+            <!-- ▲▲▲ End of changes ▲▲▲ -->
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+
+      <!-- BREADCRUMB (Optional but recommended for good navigation) -->
+      <section class="breadcrumb-section">
+        <div class="container">
+          <p><a href="index.html">Home</a> / Bedding</p>
+        </div>
+      </section>
+
+      <!-- MEN'S BRANDS CATEGORY SECTION -->
+      <section class="section container">
+        <h2 class="section__title">Shop by Category</h2>
+
+        <!-- This grid will display the brands -->
+        <div class="brand-grid">
+          <a href="bed-sheets.html" class="category-card">
+            <img src="https://i.ibb.co/S7MRn3Xf/7.jpg" alt="Bed Sheets">
+            <div class="category-card__title">Bed Sheets</div>
+          </a>
+          <a href="comforter-sets.html" class="category-card">
+            <img src="https://i.ibb.co/Rk5RxK6b/5.jpg" alt="Comforter Sets">
+            <div class="category-card__title">Comforter Sets</div>
+          </a>
+          <a href="bridal-sets.html" class="category-card">
+            <img src="https://i.ibb.co/39fxwhDj/6.jpg" alt="Bridal Sets">
+            <div class="category-card__title">Bridal Sets</div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+
+    <!-- MODAL HTML -->
+    <div id="product-modal" class="modal-overlay">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <div class="modal-grid">
+          <div class="modal-image-container">
+            <img src="" alt="Product Image" id="modal-img">
+          </div>
+          <div class="modal-info-container">
+            <h2 class="modal-name" id="modal-name">Product Name</h2>
+            <p class="modal-price" id="modal-price">Price</p>
+            <p class="modal-description" id="modal-description">
+              Product description will appear here.
+            </p>
+            <a href="#" id="whatsapp-order-btn" class="btn btn--primary" target="_blank">
+              <i class="fab fa-whatsapp"></i> Order via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPT FILES (IN THE CORRECT ORDER) -->
+
+            <script src="footer.js"></script>
+
+
+    <!-- 1. Load the Data FIRST -->
+    <script src="bedding-products.js"></script>
+
+    <!-- 2. Load the Script that uses the data -->
+    <script src="script.js"></script>
+
+    <!-- 3. Load the script for the modal pop-up -->
+    <script src="product-order-details.js"></script>
+  </body>
+</html>

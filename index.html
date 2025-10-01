@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shafique Living | Premium Bedding & Apparel</title>
+
+    <!-- Google Fonts: Montserrat for headings, Lato for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <!-- HEADER & NAVIGATION -->
+    <header class="main-header" id="main-header">
+      <div class="container">
+        <nav class="main-nav">
+          <a href="index.html" class="nav-logo">
+            <img src="https://i.postimg.cc/sxKJg2RK/logo.png" alt="Flux Kontext Pro Logo">
+          </a>
+          <button class="nav-toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-menu-header">
+              <a href="index.html" class="nav-logo">
+                <img src="https://i.postimg.cc/sxKJg2RK/logo.png" alt="Flux Kontext Pro Logo">
+              </a>
+              <button class="menu-close-btn" id="menu-close-btn" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+              </button>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bedding.html">Bedding</a></li>
+            <li><a href="womens-apparel.html">Women</a></li>
+            <li><a href="mens-apparel.html">Men</a></li>
+
+            <!-- ▲▲▲ End of changes ▲▲▲ -->
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+
+      <!-- HERO SECTION -->
+      <section class="hero">
+
+        <!-- The new slideshow container -->
+        <div class="hero-slideshow">
+          <div class="hero-slide active" style="background-image: url('https://c.pxhere.com/images/09/4d/5e77788732b67954ff76be7bea74-1632960.jpg!d');"></div>
+          <div class="hero-slide" style="background-image: url('https://i.ibb.co/gLr0BFwQ/4.jpg');"></div>
+          <div class="hero-slide" style="background-image: url('https://i.ibb.co/gMwVyQ7Y/3.jpg');"></div>
+          <div class="hero-slide" style="background-image: url('https://i.ibb.co/dw6LwCNK/2.jpg');"></div>
+          <div class="hero-slide" style="background-image: url('https://i.ibb.co/mr1C5Xvm/1.jpg');"></div>
+        </div>
+
+        <!-- Your existing content, which will now sit on top of the slideshow -->
+        <div class="hero__content">
+          <h1 class="hero__title">Designed for a Life Well-Lived</h1>
+          <p class="hero__subtitle">Explore curated collections of luxury bedsheets and modern apparel for men and women, designed to bring elegance to your home and wardrobe.</p>
+        </div>
+      </section>
+
+      <!-- ================================== -->
+
+      <!-- === DESCRIPTION / MISSION SECTION === -->
+      <section class="section container intro-section">
+
+        <!-- 👇 Added a modifier class here -->
+        <h2 class="section__title section__title--intro">The Art of Comfort</h2>
+        <p class="intro-section__text">
+          Elevate your lifestyle with Shafique Living. Shop our curated collections of premium bedding, luxury comforters, and modern apparel for men and women.
+        </p>
+      </section>
+
+      <!-- ================================== -->
+
+      <!-- CATEGORIES SECTION (Updated) -->
+      <section class="section container">
+        <h2 class="section__title">Explore Our World</h2>
+
+        <!-- 👇 CLASS NAME SIMPLIFIED TO 'category-grid' 👇 -->
+        <div class="category-grid">
+          <a href="womens-apparel.html" class="category-card" target="_blank" rel="noopener noreferrer">
+            <img src="https://i.postimg.cc/jjy2f96F/women.jpg" alt="A stylish woman in modern clothing.">
+            <div class="category-card__title">Women's Apparel</div>
+          </a>
+          <a href="mens-apparel.html" class="category-card" target="_blank" rel="noopener noreferrer">
+            <img src="https://i.postimg.cc/1z8cZ9QN/men.jpg" alt="A well-dressed man looking stylish.">
+            <div class="category-card__title">Men's Apparel</div>
+          </a>
+          <a href="bedding.html" target="_blank" class="category-card">
+            <img src="https://c.pxhere.com/photos/b0/ff/kids_bedroom_child_boy_girl_kid_beds-1010616.jpg!d" alt="A beautifully made bed with luxury bedsheets.">
+            <div class="category-card__title">Bedding</div>
+          </a>
+
+          <!-- The "Comforters" and "Bed Covers" cards have been removed -->
+        </div>
+      </section>
+    </main>
+
+        <!-- ▼▼▼ ADD THIS LINE RIGHT HERE ▼▼▼ -->
+    <div id="footer-placeholder"></div>
+
+
+    <!-- ==== WHATSAPP WELCOME POPUP ==== -->
+    <div class="whatsapp-popup" id="whatsapp-popup">
+      <button class="popup-close-btn" id="popup-close-btn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="popup-content">
+        <h4>Welcome to Shafique Living!</h4>
+        <p>Have a question? Chat with us directly on WhatsApp for a quick response!</p>
+        <a href="https://wa.me/923248229890" target="_blank" class="btn btn--primary">
+          <i class="fab fa-whatsapp"></i> Chat Now
+        </a>
+      </div>
+    </div>
+    <script src="footer.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
